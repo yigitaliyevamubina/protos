@@ -12,6 +12,10 @@ message Comment {
   string deleted_at = 7;
 }
 
+message GetCommentId {
+  string id = 1;
+}
+
 message GetPostID {
   string post_id = 1;
 }
@@ -26,8 +30,9 @@ message AllComments {
 
 service CommentService {
   rpc CreateComment(Comment) returns (Comment);
+  rpc GetCommentById(GetCommentId) returns (Comment);
   rpc GetAllCommentsByPostId(GetPostID) returns (AllComments);
   rpc GetAllCommentsByOwnerId(GetOwnerID) returns (AllComments);
 }
 
-//get all users -> []users -> []user.posts -> []user.post.comments -> 
+//get all users -> []users -> []user.posts -> []user.post.comments ->
