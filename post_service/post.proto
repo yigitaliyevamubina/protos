@@ -55,6 +55,8 @@ message OwnerPosts {
 
 service PostService {
   rpc CreatePost(ReqPost) returns (RespPost);
+  rpc UpdatePost(ReqPost) returns (ReqPost);
+  rpc DeletePost(GetPostId) returns (ReqPost);
   rpc GetPostById(GetPostId) returns (RespPost);
   rpc GetPostsByOwnerId(GetOwnerId) returns (OwnerPosts);
 }
