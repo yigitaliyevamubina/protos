@@ -3,7 +3,7 @@ syntax = "proto3";
 package like;
 
 message Status {
-   bool liked = 1;
+  bool liked = 1;
 }
 
 message PostLike {
