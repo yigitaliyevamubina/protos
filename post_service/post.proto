@@ -24,6 +24,8 @@ message Owner {
   string last_name = 3;
   int64 age = 4;
   Gender gender = 5;
+  string email = 6;
+  string password = 7;
 }
 
 enum Gender {
