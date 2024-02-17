@@ -9,6 +9,9 @@ message User {
   string last_name = 3;
   int64 age = 4;
   Gender gender = 5;
+  string email = 6;
+  string password = 7;
+  string deleted_at = 8;
 }
 
 enum Gender {
@@ -41,7 +44,9 @@ message UserWithPostsAndComments {
   string last_name = 3;
   int64 age = 4;
   Gender gender = 5;
-  repeated Post posts = 6;
+  string email = 6;
+  string password = 7;
+  repeated Post posts = 8;
 }
 
 message AllUsers {
@@ -52,7 +57,22 @@ message GetUserId {
   string user_id = 1;
 }
 
-message GetAllUsersRequest {}
+message Request {
+  string field = 1;
+  string data = 2;
+}
+
+message Response {
+  bool resp = 1;
+}
+
+message GetAllUsersRequest {
+
+}
+
+message AllUsersResp {
+  repeated User users = 1;
+}
 
 
 service UserService {
@@ -61,4 +81,5 @@ service UserService {
   rpc UpdateUser(User) returns (User);
   rpc DeleteUser(GetUserId) returns (User);
   rpc GetAllUsers(GetAllUsersRequest) returns (AllUsers);
+  rpc CheckField(Request) returns (Response);
 }
