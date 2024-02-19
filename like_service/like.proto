@@ -65,4 +65,8 @@ service LikeService {
   rpc LikeComment(CommentLike) returns (Status);
   rpc GetLikeOwnersByPostId(GetPostId) returns (Post);
   rpc GetLikeOwnersByCommentId(GetCommentId) returns (Comment);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin
